@@ -6,6 +6,10 @@ Biblioteca de componentes MUI compartilhada entre os projetos micro frontend.
 ```bash
 > npm install
 ```
+ou
+```bash
+> yarn install
+```
 
 # Como usar
 
