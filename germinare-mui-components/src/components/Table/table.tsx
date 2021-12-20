@@ -16,7 +16,7 @@ export default function TableComponent(props: ITableComponentProp) {
           <Table sx={{ minWidth: 650 }} size={props?.size || 'medium'}>
             <TableEmptyComponent isEmptyText={props.isEmptyText} />
           </Table>
-        ) : (
+        ) : ( 
           <Table sx={{ minWidth: 650 }} size={props?.size || 'medium'}>
             <TableHeadComponent {...props} />
             <TableBodyComponent {...props} />
