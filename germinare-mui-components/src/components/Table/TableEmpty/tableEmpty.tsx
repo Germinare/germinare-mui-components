@@ -18,7 +18,7 @@ export default function TableEmptyComponent(props: ITableEmptyComponentProp) {
       <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
         <TableCellColumn>
           <Image src={props?.isEmptySVG || imgBook} />
-          <Typography variant="body1">
+          <Typography variant="subtitle1">
             {props?.isEmptyText || `Não há dados para visualizar.`}
           </Typography>
         </TableCellColumn>

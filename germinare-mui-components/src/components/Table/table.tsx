@@ -12,16 +12,16 @@ import { ITableComponentProp } from './table.model'
 export default function TableComponent(props: ITableComponentProp) {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size={props?.size || 'medium'}>
-        {props?.isEmpty ? (
+      {props?.isEmpty ? (
+        <Table sx={{ minWidth: 650 }} size={props?.size || 'medium'}>
           <TableEmptyComponent isEmptyText={props.isEmptyText} />
-        ) : (
-          <div>
-            <TableHeadComponent {...props} />
-            <TableBodyComponent {...props} />
-          </div>
-        )}
-      </Table>
+        </Table>
+      ) : (
+        <Table sx={{ minWidth: 650 }} size={props?.size || 'medium'}>
+          <TableHeadComponent {...props} />
+          <TableBodyComponent {...props} />
+        </Table>
+      )}
     </TableContainer>
   )
 }
