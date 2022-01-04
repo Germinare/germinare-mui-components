@@ -3,16 +3,14 @@ import { Autocomplete, TextField } from "@mui/material";
 import { useController } from "react-hook-form";
 
 export interface IAutocompleteComponentProp {
-    name: string
+    id: string,
     label: string
     control: any
-    width?: number
+    width: number
     variant?: "standard" | "filled" | "outlined"
     rules?: object
     defaultValue?: any
     options: object[]
-    fullWidth?: boolean
-    disabled?: boolean
     multiple?: boolean
 }
 
@@ -20,7 +18,7 @@ export default function AutocompleteComponent(props: IAutocompleteComponentProp)
     const {
         field
     } = useController({
-        name: props.name,
+        name: '',
         control: props.control,
         rules: props.rules,
         defaultValue: props.defaultValue
@@ -28,10 +26,11 @@ export default function AutocompleteComponent(props: IAutocompleteComponentProp)
 
     return (
         <Autocomplete
-            id={props.name}
+        sx={{width:props.width}}
+            id={props.id}
             options={props.options}
             multiple={props.multiple}
-            renderInput={() => <TextField {...props} {...field} label={props.label} variant={props.variant || 'outlined'} defaultValue={props.defaultValue} disabled={props.disabled} fullWidth={props.fullWidth} />}
+            renderInput={(params) => <TextField {...params} {...props} {...field} label={props.label} variant={props.variant || 'outlined'} defaultValue={props.defaultValue} />}
         />
     )
 }
