@@ -1,13 +1,9 @@
 import TablePagination from '@mui/material/TablePagination';
 import * as React from 'react';
-import { ITableComponentProp } from '../table.model';
-
 
 export interface ITablePaginationDefinition{
-    rowsPerPageOptions:number[],
-    count?:number
+    rowsPerPageOptions:any[],
 }
-
 
 export default function TablePaginationComponent(props:ITablePaginationDefinition){
 
@@ -25,15 +21,16 @@ export default function TablePaginationComponent(props:ITablePaginationDefinitio
 
     return(
 
+        
+
         <TablePagination
             rowsPerPageOptions={props.rowsPerPageOptions}
             component="div"
-            count={10}
+            count={20}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
         />
     )
-
 }

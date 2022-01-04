@@ -19,11 +19,14 @@ export default function TableComponent(props: ITableComponentProp) {
             <TableEmptyComponent isEmptyText={props.isEmptyText} />
           </Table>
         ) : (
-          <Table sx={{ minWidth: 650 }} size={props?.size || 'medium'}>
-            <TableHeadComponent {...props} />
-            <TableBodyComponent {...props} />
-            <TablePaginationComponent rowsPerPageOptions = {[1,3,5]}/>
-          </Table>
+
+          <Paper> 
+            <Table sx={{ minWidth: 650 }} size={props?.size || 'medium'}>
+              <TableHeadComponent {...props} />
+              <TableBodyComponent {...props} />
+            </Table>
+            <TablePaginationComponent rowsPerPageOptions = {[1,3,5, {label: 'All', value: -1 } ]}/>
+          </Paper>
 
         )}
       </TableContainer>
